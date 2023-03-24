@@ -1,7 +1,3 @@
-<!-- <A HREF="../dashboard">Dashboard</A>
-<a href="../options/">Options</a>
-<a href="../../logout.php">Logout</a> -->
-
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">DataAqua</a>

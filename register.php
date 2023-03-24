@@ -1,12 +1,22 @@
+<?php    
+    include('includes/connections.php');
+    include('includes/sessions.php');
+?>
 <HTML>
 <HEAD>
     <title>Login</title>
     <?php include('includes\bootstrap-header.php'); ?>
 </HEAD>
 <BODY>    
-    <H1>Register</H1>        
+    <H1>Register</H1>
 
-    <FORM METHOD="POST" ACTION="user/dashboard/">
+    <?php
+        if(isset($_POST['submit'])){
+            registerUser($conn, $_POST['username'], $_POST['email'], $_POST['password'], $_POST['password2']);
+        }
+    ?>
+
+    <FORM METHOD="POST">
         <div class="mb-3">
             <label for="username" class="form-label">Username</label>
             <input name="username" type="text" class="form-control">

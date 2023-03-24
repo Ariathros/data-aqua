@@ -8,12 +8,18 @@
         <title>Login</title>
         <?php
             include "includes\bootstrap-header.php";
-        ?>  
+        ?>
     </HEAD>
     <BODY>
-        <H1>Login</H1>        
+        <H1>Login</H1>       
+        
+        <?php
+            if(isset($_POST['submit'])){
+                loginUser($conn, $_POST['username'], $_POST['password']);
+            }
+        ?>
 
-        <FORM METHOD="POST" ACTION="user/dashboard/">
+        <FORM METHOD="POST">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input name="username" type="text" class="form-control">

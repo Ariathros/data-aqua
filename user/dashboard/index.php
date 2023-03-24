@@ -1,3 +1,8 @@
+<?php
+    include("../../includes/connections.php");
+    include("../sessions.php");
+?>
+
 <html>
 <head>
     <title>Dashboard</title>
