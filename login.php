@@ -11,7 +11,7 @@
         ?>
     </HEAD>
     <BODY>
-        <div class="d-flex justify-content-end p-5">
+        <div class="p-5">
             <div>
                 <div>
                     <H1>Hello, Fish Farmer!</H1>

@@ -8,7 +8,7 @@
     <?php include('includes\bootstrap-header.php'); ?>
 </HEAD>
 <BODY>    
-    <div class="d-flex justify-content-end p-5">
+    <div class="p-5">
         <div>
             <H1>Register</H1>
 
@@ -27,7 +27,11 @@
                     <label for="email" class="form-label">Email address</label>
                     <input name="email" type="text" class="form-control" aria-describedby="emailHelp" REQUIRED>
                     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                </div>    
+                </div>
+                <div class="mb-3">
+                    <label for="device_id" class="form-label">Device ID</label>
+                    <input name="device_id" type="text" class="form-control" REQUIRED>
+                </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input name="password" type="password" class="form-control" REQUIRED>

@@ -1,6 +1,6 @@
 <?php
     include("../../includes/connections.php");
-    include("../sessions.php");
+    include("../includes/sessions.php");
 ?>
 
 <html>
@@ -10,7 +10,7 @@
 </head>
 <body>
     <?php
-        include "../sidebar.php";
+        include "../includes/sidebar.php";
     ?>
 
     <h1>Options</h1>
