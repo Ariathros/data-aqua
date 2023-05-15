@@ -1,11 +1,13 @@
 <?php
 
-    $tablequery = "`Users` (
-        `id` int(6) AUTO_INCREMENT,
-        `username` varchar(20),
-        `password` varchar(24),
-        `email` varchar(56),
-        PRIMARY KEY (`id`)
-      )    
+    $tablequery = "`user_account` (
+      `id` INT(6) AUTO_INCREMENT,
+      `username` VARCHAR(25),      
+      `email` VARCHAR(100),
+      `password` VARCHAR(25),
+      `device_id` INT(10),
+      `wifi_ssid` VARCHAR(30),
+      `wifi_password` VARCHAR(30),
+      PRIMARY KEY (`id`)) 
       ";
       createTable($conn, $tablequery);
