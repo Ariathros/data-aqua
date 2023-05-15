@@ -14,11 +14,13 @@
     // LOGIN 
 
     function loginUser($conn, $username, $password){
-        $query = "SELECT * FROM users
+        $query = "SELECT * FROM user_account
         WHERE username = '$username' AND password = '$password'";
         $result = mysqli_query($conn, $query);
         if(mysqli_num_rows($result) > 0){
             $_SESSION['username'] = $username;
+            $row = mysqli_fetch_assoc($result);
+            $_SESSION['channel_id'] = $row['device_id'];
             header("Location: user/dashboard/");
         } else {
             echo "<div class='alert alert-warning d-flex align-items-center' role='alert'>
@@ -31,12 +33,13 @@
         }
     }
 
-    function registerUser($conn, $username, $email, $password, $password2){
-        $query = "INSERT INTO users (username, email, password)
-        VALUES ('$username', '$email', '$password')";
+    function registerUser($conn, $username, $email, $device_id, $wifi_ssid, $wifi_pass, $password, $password2){
+        $query = "INSERT INTO user_account (username, email, device_id, wifi_ssid, wifi_password, password)
+        VALUES ('$username', '$email', '$device_id', '$wifi_ssid', '$wifi_pass', '$password')";
         if($password == $password2){
             if(mysqli_query($conn, $query)){
                 $_SESSION['username'] = $username;
+                $_SESSION['channel_id'] = $device_id;
                 echo "User created successfully.";
                 header("Location: user/dashboard/");
             } else {

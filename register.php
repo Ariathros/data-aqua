@@ -14,7 +14,7 @@
 
             <?php
                 if(isset($_POST['submit'])){
-                    registerUser($conn, $_POST['username'], $_POST['email'], $_POST['password'], $_POST['password2']);
+                    registerUser($conn, $_POST['username'], $_POST['email'],$_POST['device_id'],$_POST['wifi_ssid'], $_POST['wifi_pass'], $_POST['password'], $_POST['password2']);
                 }
             ?>
 
@@ -31,6 +31,14 @@
                 <div class="mb-3">
                     <label for="device_id" class="form-label">Device ID</label>
                     <input name="device_id" type="text" class="form-control" REQUIRED>
+                </div>
+                <div class="mb-3">
+                    <label for="wifi_ssid" class="form-label">WiFi SSID</label>
+                    <input name="wifi_ssid" type="text" class="form-control" REQUIRED>
+                </div>
+                <div class="mb-3">
+                    <label for="wifi_pass" class="form-label">WiFi Password</label>
+                    <input name="wifi_pass" type="password" class="form-control" REQUIRED>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
