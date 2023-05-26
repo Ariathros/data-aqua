@@ -7,15 +7,18 @@
 <head>
     <title>Options</title>
     <?php include("../../includes/bootstrap-header.php"); ?>
+    <link rel="stylesheet" href="../../assets/style.css">
 </head>
-<body>
+<body class="user">
     <?php
         include "../includes/sidebar.php";
     ?>
 
-    <h1>Options</h1>
-    <p>Here are your options.</p>
-
+    <div>
+        <h1>Options</h1>
+        <p>Here are your options.</p>
+    </div>
+    
 </body>
 
 </html>
