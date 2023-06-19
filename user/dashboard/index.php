@@ -13,9 +13,8 @@
             include "../includes/sidebar.php";
         ?>
 
-        <h1>Dashboard</h1>
-        <p>Here is your dashboard.</p>
-        <?php echo $_SESSION['channel_id'];?>
+        <h1><br><br>Dashboard</h1>
+        <hr>
         <div class="p-3 border">
             <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/<?php echo $_SESSION['channel_id'];?>/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line"></iframe>
             <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/<?php echo $_SESSION['channel_id'];?>/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=pH+Level&type=line"></iframe>
