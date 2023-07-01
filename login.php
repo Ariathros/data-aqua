@@ -61,31 +61,6 @@
                 </div>
             </div>
         </div>
-        <!--<div class="wrapper">
-            <div class="logo">
-                <img src="./assets/images/logo.png" alt="">
-            </div>
-            <div class="header">
-                <H1>Hello, Fish Farmer!</H1>
-                <h6>Sign in to start your session. </h6>
-            </div>
-
-            
-            <form  METHOD="POST" class="p-3 mt-3">
-                <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-user-alt"></span>
-                    <input name="username" type="text" placeholder="Username" REQUIRED>
-                </div>
-                <div class="form-field d-flex align-items-center">
-                    <span class="fas fa-key"></span>
-                    <input name="password" type="password" placeholder="Password" REQUIRED>
-                </div>
-                <button name="submit" type="submit" class="btn btn-primary">Submit</button>
-            </form>
-            <div class="text-center fs-6">
-                New User? <A HREF="register.php">Create a New Account</A>
-            </div>
-        </div>-->
         <script src="./assets/myScript.js"></script>
     </BODY>
 </HTML>
