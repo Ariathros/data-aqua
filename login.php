@@ -17,7 +17,7 @@
             <div class="form-container sign-up-container">
                 <?php
                     if(isset($_POST['register'])){
-                        registerUser($conn, $_POST['username'], $_POST['email'], $_POST['password'], $_POST['password2']);
+                        registerUser($conn, $_POST['username'], $_POST['email'],  $_POST['device_id'], $_POST['password'], $_POST['password2']);
                     }
                 ?>
                 <form METHOD="POST">
