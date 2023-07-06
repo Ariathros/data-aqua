@@ -80,65 +80,28 @@
                     <input class="btn btn-primary fs-5" type="submit" name="Result" value="Show Results">
                 </div>
             </div>
-        </form>
-        
-        <?php 
-            $FWS=0;
-            $HD=0;
-            $PV=0;
-            $SR=0;
-            $FW=0;
-            $FCR=0;
-            $SC=0;
-            $FC=0;
-            $AC=0;
-            $IRC=0;
-            $FPH=0;
-
+        </div>
+        <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $FWS=$_POST['FWS'];
-                $HD=$_POST['HD'];
-                $PV=$_POST['PV'];
-                $SR=$_POST['SR'];
-                $FW=$_POST['FW'];
-                $FCR=$_POST['FCR'];
-                $SC=$_POST['SC'];
-                $FC=$_POST['FC'];
-                $AC=$_POST['AC'];
-                $IRC=$_POST['IRC'];
-                $FPH=$_POST['FPH'];
-                
-                //calculation
-                
-                $HDN;
-                $WH;
-                $BH=0;
-                $NS=0;
-                $FN=0;
-                $TSC=0;
-                $TFC=0;
-                $TC=0;
-                $BEP=0;
-                $REV=0;
-                $PRO=0;
-                $ROI=0;
+                $start_date=$_POST['start_date'];
+                $expenses=$_POST['expenses'];
+                $harvest_date=$_POST['harvest_date'];
+                $harvest=$_POST['harvest'];
+                $price=$_POST['price'];
+                $calcu=$_POST['calcu'];
 
-                $Result=$_POST['Result'];
+                $sales = 0;
+                $profit = 0;
+                $roi = 0;
+                $interval;
             }
-
-            if(isset($Result)){
-                $HDN = ($HD)/($FW-$FWS);
-                $WH = $HD*$PV;
-                $BH = $WH/$FW;
-                $NS = $BH/$SR;
-                $FN = $FCR*$WH;
-                $TSC = $SC*$NS*$FWS;
-                $TFC = $FC*$FN;
-                $TC = ($TSC+$TFC+$AC)*(1 +($IRC/100));
-                $BEP = $TC/$WH;
-                $REV = $FPH*$WH;
-                $PRO = $REV-$TC;
-                $ROI = 100*($PRO/$TC);
+            if(isset($roi)){
+                $start_date=date_create($start_date);
+                $harvest_date=date_create($harvest_date);
+                $sales = $harvest*$price;
+                $profit = $sales-$expenses;
+                $roi = ($profit/$expenses)*100;
+                $interval = date_diff($start_date,$harvest_date);
             }
         ?>
 

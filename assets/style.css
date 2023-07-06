@@ -232,30 +232,16 @@ body{
 	font-family: var(--subtitle-font);
 	font-size: 20px;
 }
+.container{
+	padding-top: 10px;
+}
 .calculations .input-group .input-group-text{
-	width: 380px;
+	width: 28%;
 }
 .calculations .input-group .end{
-	width: 70px;
-}
-.calculations form .btn{
-	font-size: 100px;
+	width: 11%;
 }
 
-/**/
-.device-config{
-	margin-left: 30px;
-	margin-right: 30px;
-}
-.device-config h1{
-	font-family: var(--subtitle-font);
-	font-size: 35px;
-	margin-top: 20px;
-}
-.device-configs p{
-	font-family: var(--subtitle-font);
-	font-size: 20px;
-}
 
 /**/
 .user-settings{
