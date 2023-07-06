@@ -1,37 +1,41 @@
 <?php
     include("../../includes/connections.php");
     include("../includes/sessions.php");
-
-    $username = $_SESSION['username'];
-    $query = "SELECT * FROM user_account
-    WHERE username = '$username'";
-    $result = mysqli_query($conn, $query);
-    if(mysqli_num_rows($result) > 0){
-        $row = mysqli_fetch_assoc($result);
-        $wifi_ssid = $row['wifi_ssid'];
-        $wifi_pass = $row['wifi_password'];
-    }
 ?>
 
 <html>
 <head>
-    <title>Options</title>
+    <title>User Settings</title>
     <?php include("../../includes/bootstrap-header.php"); ?>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+
+<body >
     <?php
         include "../includes/sidebar.php";
     ?>
+    <div class="user-settings">
+        <h1>User Settings</h1>
+        <hr></hr>
+        <h2>Account Settings</h2>
+        <form method="POST" action="../options/">
+            
+        Username: <input name="username" type="TEXT" value="<?php echo $_SESSION['username'];?>"><br>
+        Device ID: <?php echo $_SESSION['channel_id'];?><br>
+        <input name="change_details" type="submit" value="Save Changes">
+        </form>
 
-    <h1><br><br>Options</h1>
-    <hr>
-    <form>
-        Device ID: <input type="text" name="device_id" value="<?php echo $_SESSION['channel_id']; ?>"><br>
-        WiFi SSID: <input type="text" name="wifi_ssid" value="<?php echo $wifi_ssid; ?>"><br>
-        WiFi Password: <input type="password" name="wifi_pass" value="<?php echo $wifi_pass; ?>"><br>
-        <input type="submit" value="Save Changes">
-    </form>
-    
+
+
+        <a href="change-pass.php">Change Password</a>
+    </div>
 </body>
 
 </html>
+
+<?php
+    if(isset($_POST['change_details'])){
+        editUsername($conn, $_POST['username'], $_SESSION['channel_id']);
+    }
+?>

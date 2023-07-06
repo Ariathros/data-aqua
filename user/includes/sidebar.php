@@ -32,7 +32,7 @@
 
 <nav class="sidebar navbar navbar-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="../dashboard/">
       <img src="../../assets/images/logo.png">
       DatAqua
     </a>
@@ -50,7 +50,7 @@
         <div class="list-group list-group-flush">
           <a href="../dashboard" class="list-group-item list-group-item-action">Dashboard</a>
           <a href="../options/calculations.php" class="list-group-item list-group-item-action">ROI Calculator</a>
-          <a href="../options/user-pref.php" class="list-group-item list-group-item-action">User Settings</a>
+          <a href="../options/" class="list-group-item list-group-item-action">User Settings</a>
           <a href="../../logout.php" class="list-group-item list-group-item-action">Logout</a>
         </div>
     </div>
