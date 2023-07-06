@@ -17,7 +17,7 @@
     ?>
     <div class="calculations">
         <h1>Calculations</h1>
-        <p>Calculate here mwehehe.</p>
+        <HR></HR>
 
         <form method="post" action="">
             <div class="input-group mb-3">
@@ -145,62 +145,62 @@
         <div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Holding density at harvest</span>
-                <input type="number" class="form-control" name="HDN" value="<?php echo $HDN; ?>">
+                <input type="number" class="form-control" name="HDN" value="<?php echo $HDN; ?>" DISABLED>
                 <span class="input-group-text end">kg/ha</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Total weight of fish</span>
-                <input type="number" class="form-control" name="WH" value="<?php echo $WH; ?>">
+                <input type="number" class="form-control" name="WH" value="<?php echo $WH; ?>" DISABLED>
                 <span class="input-group-text end">kg</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Total fish biomass</span>
-                <input type="number" class="form-control" name="BH" value="<?php echo $BH; ?>">
+                <input type="number" class="form-control" name="BH" value="<?php echo $BH; ?>" DISABLED>
                 <span class="input-group-text end"></span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Number of seed</span>
-                <input type="number" class="form-control" name="NS" value="<?php echo $NS; ?>">
+                <input type="number" class="form-control" name="NS" value="<?php echo $NS; ?>" DISABLED>
                 <span class="input-group-text end"></span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Feed needed to produce biomass at harvest</span>
-                <input type="number" class="form-control" name="FN" value="<?php echo $FN; ?>">
+                <input type="number" class="form-control" name="FN" value="<?php echo $FN; ?>" DISABLED>
                 <span class="input-group-text end">kg</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Total cost for seed</span>
-                <input type="number" class="form-control" name="TSC" value="<?php echo $TSC; ?>">
+                <input type="number" class="form-control" name="TSC" value="<?php echo $TSC; ?>" DISABLED>
                 <span class="input-group-text end">₱</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Total cost for feed</span>
-                <input type="number" class="form-control" name="TFC" value="<?php echo $TFC; ?>">
+                <input type="number" class="form-control" name="TFC" value="<?php echo $TFC; ?>" DISABLED>
                 <span class="input-group-text end">₱</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Total cost</span>
-                <input type="number" class="form-control" name="TC" value="<?php echo $TC; ?>">
+                <input type="number" class="form-control" name="TC" value="<?php echo $TC; ?>" DISABLED>
                 <span class="input-group-text end">₱</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Break-even price</span>
-                <input type="number" class="form-control" name="BEP" value="<?php echo $BEP; ?>">
+                <input type="number" class="form-control" name="BEP" value="<?php echo $BEP; ?>" DISABLED>
                 <span class="input-group-text end">₱/kg</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Revenue</span>
-                <input type="number" class="form-control" name="REV" value="<?php echo $REV; ?>">
+                <input type="number" class="form-control" name="REV" value="<?php echo $REV; ?>" DISABLED>
                 <span class="input-group-text end">₱</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Profit</span>
-                <input type="number" class="form-control" name="PRO" value="<?php echo $PRO; ?>">
+                <input type="number" class="form-control" name="PRO" value="<?php echo $PRO; ?>" DISABLED>
                 <span class="input-group-text end">₱</span>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text">Return of Investment</span>
-                <input type="number" class="form-control" name="ROI" value="<?php echo $ROI; ?>">
+                <input type="number" class="form-control" name="ROI" value="<?php echo $ROI; ?>" DISABLED>
                 <span class="input-group-text end">%</span>
             </div>
         </div>
