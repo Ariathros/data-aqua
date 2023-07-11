@@ -7,14 +7,17 @@
 <head>
     <title>Dashboard</title>
     <?php include("../../includes/bootstrap-header.php"); ?>
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <?php
         include "../includes/sidebar.php";
     ?>
 
-    <h1>Dashboard</h1>
-    <p>Here is your dashboard.</p>
+    <div class="dashboard">
+        <h1>Dashboard</h1>
+        <p>Here is your dashboard.</p>
 
     <div class="p-3 border">
         <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/<?php echo $_SESSION['channel_id']; ?>/charts/1?bgcolor=%23ffffff&color=%23ff9f00&dynamic=true&results=60&title=Temperature&type=line"></iframe>
