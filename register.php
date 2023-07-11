@@ -14,7 +14,7 @@
 
             <?php
                 if(isset($_POST['submit'])){
-                    registerUser($conn, $_POST['username'], $_POST['email'],$_POST['device_id'],$_POST['wifi_ssid'], $_POST['wifi_pass'], $_POST['password'], $_POST['password2']);
+                    registerUser($conn, $_POST['username'], $_POST['email'], $_POST['device_id'], $_POST['password'], $_POST['password2']);
                 }
             ?>
 
