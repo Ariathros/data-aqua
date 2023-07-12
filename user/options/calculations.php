@@ -1,6 +1,28 @@
 <?php
     include("../../includes/connections.php");
     include("../includes/sessions.php");
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $start_date=$_POST['start_date'];
+                $expenses=$_POST['expenses'];
+                $harvest_date=$_POST['harvest_date'];
+                $harvest=$_POST['harvest'];
+                $price=$_POST['price'];
+                $calcu=$_POST['calcu'];
+
+                $sales = 0;
+                $profit = 0;
+                $roi = 0;
+                $interval;
+            }
+            if(isset($roi)){
+                $start_date=date_create($start_date);
+                $harvest_date=date_create($harvest_date);
+                $sales = $harvest*$price;
+                $profit = $sales-$expenses;
+                $roi = ($profit/$expenses)*100;
+                $interval = date_diff($start_date,$harvest_date);
+            }
 ?>
 
 <html>
@@ -55,17 +77,17 @@
                 <div class="col-6">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Sales</span>
-                        <input type="number" class="form-control" name="sales" value="<?php echo $sales; ?>">
+                        <input type="number" class="form-control" name="sales" value="<?php echo $sales; ?>" readonly>
                         <span class="input-group-text end">₱</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Profit</span>
-                        <input type="number" class="form-control" name="profit" value="<?php echo $profit; ?>">
+                        <input type="number" class="form-control" name="profit" value="<?php echo $profit; ?>" readonly>
                         <span class="input-group-text end">₱</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">ROI</span>
-                        <input type="number" class="form-control" name="roi" value="<?php echo $roi; ?>">
+                        <input type="number" class="form-control" name="roi" value="<?php echo $roi; ?>" readonly>
                         <span class="input-group-text end">%</span>
                     </div>
                     <div class="input-group mb-3">
@@ -75,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <?php
+        <!-- <?php
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $start_date=$_POST['start_date'];
                 $expenses=$_POST['expenses'];
@@ -97,7 +119,7 @@
                 $roi = ($profit/$expenses)*100;
                 $interval = date_diff($start_date,$harvest_date);
             }
-        ?>
+        ?> -->
     </div>
 
     
