@@ -1,6 +1,26 @@
 <?php
     include("../../includes/connections.php");
     include("../includes/sessions.php");
+
+    $sales = 0;
+    $profit = 0;
+    $roi = 0;
+    $interval = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $start_date = $_POST['start_date'];
+        $expenses = $_POST['expenses'];
+        $harvest_date = $_POST['harvest_date'];
+        $harvest = $_POST['harvest'];
+        $price = $_POST['price'];
+
+        $start_date_obj = date_create($start_date);
+        $harvest_date_obj = date_create($harvest_date);
+        $sales = $harvest * $price;
+        $profit = $sales - $expenses;
+        $roi = ($profit / $expenses) * 100;
+        $interval = date_diff($start_date_obj, $harvest_date_obj);
+    }
 ?>
 
 <html>
@@ -11,17 +31,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body >
-    <?php
-        include "../includes/sidebar.php";
-    ?>
+<body>
+    <?php include "../includes/sidebar.php"; ?>
     <div class="calculations">
         <h1>Return of Investment Calculator</h1>
-        <!--<p>Calculate here mwehehe.</p>--->
+        <p>1. Fill in the input fields.</p>
+        <p>2. Press "Calculate ROI".</p>
+        <p>3. Results will be shown in the 2nd column.</p>
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-6">
-                    <form  method="post" action="">
+                    <form method="post" action="">
                         <div class="input-group mb-3 has-validation">
                             <span class="input-group-text">Start of Farming</span>
                             <input type="date" class="form-control" name="start_date" required>
@@ -41,7 +61,7 @@
                             <span class="input-group-text end">kg</span>
                         </div>
                         <div class="input-group mb-3 has-validation">
-                        <span class="input-group-text">Market price</span>
+                            <span class="input-group-text">Market price</span>
                             <input type="number" class="form-control" name="price" required>
                             <span class="input-group-text end">₱/kg</span>
                         </div>
@@ -55,52 +75,26 @@
                 <div class="col-6">
                     <div class="input-group mb-3">
                         <span class="input-group-text">Sales</span>
-                        <input type="number" class="form-control" name="sales" value="<?php echo $sales; ?>">
+                        <input type="number" class="form-control" name="sales" value="<?php echo $sales; ?>" readonly>
                         <span class="input-group-text end">₱</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Profit</span>
-                        <input type="number" class="form-control" name="profit" value="<?php echo $profit; ?>">
+                        <input type="number" class="form-control" name="profit" value="<?php echo $profit; ?>" readonly>
                         <span class="input-group-text end">₱</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">ROI</span>
-                        <input type="number" class="form-control" name="roi" value="<?php echo $roi; ?>">
+                        <input type="number" class="form-control" name="roi" value="<?php echo $roi; ?>" readonly>
                         <span class="input-group-text end">%</span>
                     </div>
                     <div class="input-group mb-3">
                         <span class="input-group-text">Duration</span>
-                        <input type="" class="form-control" name="roi" value="<?php echo $interval->format("%m months and %d days"); ?>">
+                        <input type="" class="form-control" name="roi" value="<?php echo $interval->format("%m months and %d days"); ?>" readonly>
                     </div>
                 </div>
             </div>
         </div>
-        <?php
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $start_date=$_POST['start_date'];
-                $expenses=$_POST['expenses'];
-                $harvest_date=$_POST['harvest_date'];
-                $harvest=$_POST['harvest'];
-                $price=$_POST['price'];
-                $calcu=$_POST['calcu'];
-
-                $sales = 0;
-                $profit = 0;
-                $roi = 0;
-                $interval;
-            }
-            if(isset($roi)){
-                $start_date=date_create($start_date);
-                $harvest_date=date_create($harvest_date);
-                $sales = $harvest*$price;
-                $profit = $sales-$expenses;
-                $roi = ($profit/$expenses)*100;
-                $interval = date_diff($start_date,$harvest_date);
-            }
-        ?>
     </div>
-
-    
 </body>
-
 </html>
