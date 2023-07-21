@@ -1,26 +1,6 @@
 <?php
     include("../../includes/connections.php");
     include("../includes/sessions.php");
-
-    $sales = 0;
-    $profit = 0;
-    $roi = 0;
-    $interval = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $start_date = $_POST['start_date'];
-        $expenses = $_POST['expenses'];
-        $harvest_date = $_POST['harvest_date'];
-        $harvest = $_POST['harvest'];
-        $price = $_POST['price'];
-
-        $start_date_obj = date_create($start_date);
-        $harvest_date_obj = date_create($harvest_date);
-        $sales = $harvest * $price;
-        $profit = $sales - $expenses;
-        $roi = ($profit / $expenses) * 100;
-        $interval = date_diff($start_date_obj, $harvest_date_obj);
-    }
 ?>
 
 <html>
@@ -95,6 +75,29 @@
                 </div>
             </div>
         </div>
+        <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                $start_date=$_POST['start_date'];
+                $expenses=$_POST['expenses'];
+                $harvest_date=$_POST['harvest_date'];
+                $harvest=$_POST['harvest'];
+                $price=$_POST['price'];
+                $calcu=$_POST['calcu'];
+
+                $sales = 0;
+                $profit = 0;
+                $roi = 0;
+                $interval;
+            }
+            if(isset($roi)){
+                $start_date=date_create($start_date);
+                $harvest_date=date_create($harvest_date);
+                $sales = $harvest*$price;
+                $profit = $sales-$expenses;
+                $roi = ($profit/$expenses)*100;
+                $interval = date_diff($start_date,$harvest_date);
+            }
+        ?>
     </div>
 </body>
 </html>
